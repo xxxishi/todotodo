@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { EventLists } from "../src/ToDoList/container/eventslist_container"
+import { SearchContainer } from "../src/ToDoList/container/search_container";
+import { Layout, Row, Col } from "antd";
+
+const { Header, Footer } = Layout;
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Layout>
+          <Header/>
+          <Row>
+              <Col flex={2}></Col>
+              <Col flex={3}> 
+                  <SearchContainer />
+                  <EventLists />
+              </Col>
+              <Col flex={2}></Col>
+          </Row>
+          <Footer/>
+      </Layout>
     </div>
   );
 }
